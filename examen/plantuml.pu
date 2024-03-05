@@ -1,0 +1,32 @@
+@startuml
+class Usuario {
+  +id: int
+  nombre: string
+}
+
+class Libro {
+  +id: int
+  titulo: string
+}
+
+class Resena {
+  +id: int
+  contenido: string
+}
+
+class Autor {
+  +id: int
+  nombre: string
+}
+
+class Categoria {
+  +id: int
+  nombre: string
+}
+
+Usuario "1" -- "0..n" Libro : tiene
+Usuario "1" -- "0..n" Resena : deja
+Libro "n" -- "1" Autor : pertenece a
+Libro "1" -- "0..n" Resena : tiene
+Libro "0..n" -- "0..1" Categoria : clasificado en
+@enduml
